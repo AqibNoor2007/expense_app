@@ -40,7 +40,6 @@ function HandleUserError() {
 
 function HandleEmailError() {
   var emailValue = emailElement.value;
-  console.log(emailValue.includes(" "), "space");
   if (!emailValue.includes("@")) {
     CheckValidation("errorEmail", "hidden", "Email is included @");
   } else if (emailValue.includes(" ")) {
@@ -172,7 +171,6 @@ function SignUp(event) {
       password,
     });
     users = JSON.stringify(existingUsers);
-    console.log(users);
     localStorage.setItem("authUsers", users);
 
     document.getElementById("signloder").classList.remove("lodding");
@@ -228,36 +226,45 @@ function LogIn(event) {
     );
   } else {
     var getUser = JSON.parse(localStorage.getItem("authUsers"));
-    console.log(getUser);
+
     var userData;
-    var user = getUser.find(function (element, index) {
-      if (element.email == email) {
-        userData = element;
-        if (getUser[index].password == password) {
-          document.getElementById("loginloder").classList.remove("lodding");
-          document
-            .getElementById("loginloder")
-            .classList.add("loddingVisiable");
-          document.getElementById("logInBtn").classList.add("lodding");
-          setTimeout(function () {
-            window.location.href = "/dashBoard";
-          }, 2000);
-          console.log(element);
-        } else {
-          CheckValidation(
-            "logInErrorPassword",
-            "hidden",
-            "Password Does not Match"
-          );
+    if (getUser == null) {
+      document.getElementById("indecation").classList.add("existHidden");
+      setTimeout(function () {
+        document.getElementById("indecation").classList.remove("existHidden");
+      }, 3000);
+    } else {
+      var user = getUser.find(function (element, index) {
+        if (element.email == email) {
+          userData = element;
+          if (getUser[index].password == password) {
+            document.getElementById("loginloder").classList.remove("lodding");
+            document
+              .getElementById("loginloder")
+              .classList.add("loddingVisiable");
+            document.getElementById("logInBtn").classList.add("lodding");
+            setTimeout(function () {
+              window.location.href = "/dashBoard";
+            }, 2000);
+            console.log(element);
+          } else {
+            CheckValidation(
+              "logInErrorPassword",
+              "hidden",
+              "Password Does not Match"
+            );
+          }
         }
-      }
-      if (!userData) {
-        document.getElementById("indecation").classList.add("existHidden");
-        setTimeout(function () {
-          document.getElementById("indecation").classList.remove("existHidden");
-        }, 3000);
-      }
-    });
+        if (!userData) {
+          document.getElementById("indecation").classList.add("existHidden");
+          setTimeout(function () {
+            document
+              .getElementById("indecation")
+              .classList.remove("existHidden");
+          }, 3000);
+        }
+      });
+    }
   }
 }
 
