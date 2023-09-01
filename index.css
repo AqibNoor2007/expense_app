@@ -1,0 +1,91 @@
+.hidden {
+  color: red;
+  position: absolute;
+  display: block !important;
+  bottom: -36px;
+}
+.error {
+  display: none;
+}
+.logInError {
+  display: none;
+}
+.inputContailner {
+  position: relative;
+}
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  flex-wrap: nowrap;
+  justify-content: center;
+  align-items: center;
+  background-image: url(/images/expenseLogin.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+
+  background-size: cover;
+}
+.image {
+  width: 100%;
+}
+.hedding {
+  text-align: center;
+  color: white;
+}
+.imageContainer {
+  width: 50%;
+}
+.mt-5 {
+  width: 50%;
+}
+.form {
+  background-color: #000000b0;
+  border-radius: 13px;
+  padding: 12px 37px;
+  margin: 1rem 1rem;
+}
+.form-label {
+  margin-bottom: 0.5rem;
+  color: white;
+  font-size: 23px;
+}
+.form-text {
+  color: white;
+  font-size: 16px;
+}
+.btn {
+  background: white;
+  color: black;
+  margin-top: 10px;
+}
+.button {
+  border: none;
+  background: transparent;
+  color: #fbbb00;
+  font-size: 18px;
+  font-weight: 600;
+}
+.formHidden {
+  display: none;
+}
+.formVisiable {
+  display: block;
+}
+.exist {
+  font-size: 25px;
+  color: red;
+  background: #e4e91c;
+  padding: 3px 14px;
+  border-radius: 18px;
+  visibility: hidden;
+}
+.existHidden {
+  visibility: visible !important;
+}
+.lodding {
+  display: none;
+}
+.loddingVisiable {
+  display: block !;
+}
