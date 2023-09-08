@@ -170,8 +170,11 @@ function SignUp(event) {
       email,
       password,
     });
-    users = JSON.stringify(existingUsers);
-    localStorage.setItem("authUsers", users);
+    localStorage.setItem("authUsers", JSON.stringify(existingUsers));
+    localStorage.setItem(
+      "loginUser",
+      JSON.stringify(existingUsers[existingUsers.length - 1])
+    );
 
     document.getElementById("signloder").classList.remove("lodding");
     document.getElementById("signloder").classList.add("loddingVisiable");
@@ -247,6 +250,7 @@ function LogIn(event) {
               window.location.href = "/dashBoard";
             }, 2000);
             console.log(element);
+            localStorage.setItem("loginUser", JSON.stringify(element));
           } else {
             CheckValidation(
               "logInErrorPassword",
@@ -266,8 +270,4 @@ function LogIn(event) {
       });
     }
   }
-}
-
-function LogOut() {
-  window.location.href = "/index.html?";
 }
