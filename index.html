@@ -18,131 +18,154 @@
     <link rel="stylesheet" href="index.css" />
     <title>Expenses App</title>
   </head>
-  <div class="mainContainer">
-  
-    <p id="indecation" class="exist"> Email Does not Exist </p>
-    <div class="form">
-      <div id="signInForm" class="formHidden">
-      <h1 class="hedding">Sign In</h1>
-      <form >
-        <div class="mb-3 inputContailner">
-          <label for="User Name" class="form-label">User Name</label>
-          <input
-            oninput="HandleUserError()"
-            placeholder="Enter your name"
-            type="text"
-            class="form-control"
-            id="userName"
-            aria-describedby="emailHelp"
-          />
-          <p id="errorName" class="error">Name is required</p>
+  <body class="BackGroundImage">
+    <div class="mainContainer">
+      <p id="indecation" class="exist">Email Does not Exist</p>
+      <div class="form">
+        <div id="signInForm" class="formHidden">
+          <h1 class="hedding">Sign In</h1>
+          <form>
+            <div class="mb-3 inputContailner">
+              <label for="User Name" class="form-label">User Name</label>
+              <input
+                oninput="HandleUserError()"
+                placeholder="Enter your name"
+                type="text"
+                class="form-control"
+                id="userName"
+                aria-describedby="emailHelp"
+              />
+              <p id="errorName" class="error">Name is required</p>
+            </div>
+            <div class="mb-3 inputContailner">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                oninput="HandleEmailError()"
+                placeholder="Enter your email"
+                type="email"
+                class="form-control"
+                id="email"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
+              <p id="errorEmail" class="error">Email is required</p>
+            </div>
+            <div class="passwordInput">
+              <div class="mb-3 inputContailner">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Password</label
+                >
+                <input
+                  oninput="HandlepasswordError()"
+                  placeholder="Enter your password"
+                  type="password"
+                  class="form-control"
+                  id="password"
+                />
+                <p id="errorPassword" class="error">Password is required</p>
+              </div>
+              <div class="mb-3 inputContailner">
+                <label for="exampleInputPassword1" class="form-label"
+                  >Confirm Password</label
+                >
+                <input
+                  oninput="HandleConfirmPasswordError()"
+                  placeholder="Confirm password"
+                  type="password"
+                  class="form-control"
+                  id="confirm_password"
+                />
+                <p id="errorConfirmPassword" class="error">
+                  Confirm Password is required
+                </p>
+              </div>
+            </div>
+            <div class="mb-3 form-text">
+              Already have an account ? Click here to
+              <button class="button" onclick="FormVisiavle('logIn' ,event)">
+                Log In
+              </button>
+            </div>
+            <div>
+              <div
+                class="spinner-border text-primary lodding"
+                role="status"
+                id="signloder"
+              ></div>
+              <button
+                onclick="SignUp(event)"
+                class="btn btn-primary request"
+                id="signInBtn"
+              >
+                Sign In
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="mb-3 inputContailner">
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-            oninput="HandleEmailError()"
-            placeholder="Enter your email"
-            type="email"
-            class="form-control"
-            id="email"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
-          <p id="errorEmail" class="error">Email is required</p>
-        </div>
-        <div class="passwordInput">
-        <div class="mb-3 inputContailner">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-            oninput="HandlepasswordError()"
-            placeholder="Enter your password"
-            type="password"
-            class="form-control"
-            id="password"
-          />
-          <p id="errorPassword" class="error">
-            Password is required
-          </p>
-        </div>
-        <div class="mb-3 inputContailner">
-          <label for="exampleInputPassword1" class="form-label">Confirm Password</label>
-          <input
-            oninput="HandleConfirmPasswordError()"
-            placeholder="Confirm password"
-            type="password"
-            class="form-control"
-            id="confirm_password"
-          />
-          <p id="errorConfirmPassword" class="error">
-            Confirm Password is required
-          </p>
-        </div>
-        </div>
-        <div class="mb-3 form-text">
-          Already have an account ? Click here to
-          <button class="button" onclick="FormVisiavle('logIn' ,event)">Log In</button>
-        </div>
-        <div>
-          <div class="spinner-border text-primary lodding" role="status" id="signloder" >
-          </div>
-          <button onclick="SignUp(event)" class="btn btn-primary request" id="signInBtn"> Sign In</button>
-        </div>
-      </form>
 
-    </div>
-   
+        <div id="logInForm" class="formVisiable">
+          <h1 class="hedding">Log In</h1>
+          <form>
+            <div class="mb-3 inputContailner">
+              <label for="exampleInputEmail1" class="form-label"
+                >Email address</label
+              >
+              <input
+                oninput="HandleLogInEmailError()"
+                placeholder="Enter your email"
+                type="email"
+                class="form-control"
+                id="logInEmail"
+                aria-describedby="emailHelp"
+              />
+              <div id="emailHelp" class="form-text">
+                We'll never share your email with anyone else.
+              </div>
 
-<div id="logInForm" class="formVisiable">
-
-  <h1 class="hedding">Log In</h1>
-      <form>
-        <div class="mb-3 inputContailner" >
-          <label for="exampleInputEmail1" class="form-label"
-            >Email address</label
-          >
-          <input
-          oninput="HandleLogInEmailError()"
-            placeholder="Enter your email"
-            type="email"
-            class="form-control"
-            id="logInEmail"
-            aria-describedby="emailHelp"
-          />
-          <div id="emailHelp" class="form-text">
-            We'll never share your email with anyone else.
-          </div>
-          
-          <p id="logInErrorEmail" class="logInError">Email is required</p>
+              <p id="logInErrorEmail" class="logInError">Email is required</p>
+            </div>
+            <div class="mb-3 inputContailner">
+              <label for="exampleInputPassword1" class="form-label"
+                >Password</label
+              >
+              <input
+                oninput="HandleLogInPasswordError()"
+                placeholder="Enter your password"
+                type="password"
+                class="form-control"
+                id="logInPassword"
+              />
+              <p id="logInErrorPassword" class="logInError">
+                Password is required
+              </p>
+            </div>
+            <div class="mb-3 form-text">
+              Don't have an account ? Click here to !
+              <button class="button" onclick="FormVisiavle('signIn' ,event)">
+                Sig In
+              </button>
+            </div>
+            <div>
+              <div
+                class="spinner-border text-primary lodding"
+                role="status"
+                id="loginloder"
+              ></div>
+              <button
+                onclick="LogIn(event)"
+                class="btn btn-primary request"
+                id="logInBtn"
+              >
+                Log In
+              </button>
+            </div>
+          </form>
         </div>
-        <div class="mb-3 inputContailner">
-          <label for="exampleInputPassword1" class="form-label">Password</label>
-          <input
-           oninput="HandleLogInPasswordError()"
-            placeholder="Enter your password"
-            type="password"
-            class="form-control"
-            id="logInPassword"
-          />
-          <p id="logInErrorPassword" class="logInError">
-            Password is required
-          </p>
-        </div>
-        <div class="mb-3 form-text">
-          Don't have an account ? Click here to !
-          <button class="button" onclick="FormVisiavle('signIn' ,event)"> Sig In</button>
-        </div>
-        <div>
-          <div class="spinner-border text-primary lodding" role="status" id="loginloder" >
-          </div>
-          <button onclick="LogIn(event)" class="btn btn-primary request" id="logInBtn"> Log In</button>
-        </div>
-      </form>
+      </div>
     </div>
-    </div>
-  </div>
   </body>
 </html>

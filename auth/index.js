@@ -166,6 +166,7 @@ function SignUp(event) {
   } else {
     var existingUsers = JSON.parse(localStorage.getItem("authUsers")) || [];
     existingUsers.push({
+      id: existingUsers.length + 1,
       userName,
       email,
       password,
@@ -181,7 +182,7 @@ function SignUp(event) {
     document.getElementById("signInBtn").classList.add("lodding");
     setTimeout(function () {
       window.location.href = "/dashBoard";
-    }, 2000);
+    }, 1000);
 
     nameElement.value = "";
     emailElement.value = "";

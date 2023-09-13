@@ -4,26 +4,43 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="dashbord.js" defer></script>
-    <link rel="stylesheet" href="dashbor.css" />
+    <link rel="stylesheet" href="dashbord.css" />
     <title>Expense Tracker Dashboard</title>
   </head>
   <body>
     <header>
       <div class="logoutBtn">
-        <h3 style="margin: 0">Expense Tracker</h3>
+        <h3 style="margin: 0">ToDo App</h3>
         <button id="logout" onclick="LogOut()">Logout</button>
       </div>
-      <button id="addExpense">Add Expense</button>
+
       <!-- New logout button -->
     </header>
     <h3 id="welComemsg"></h3>
     <main>
-      <section class="expenses">
-        <!-- Expense items go here -->
-      </section>
-      <section class="summary">
-        <!-- Expense summary goes here -->
-      </section>
+      <div class="container">
+        <h2>TODO LIST</h2>
+        <h3>Add Item</h3>
+        <p>
+          <input id="new-task" type="text" oninput="CheckValue()" />
+          <button onclick="AddTodo()" id="addTodo">Add</button>
+          <p id="error" class="hidden">Please Enter a Value</p>
+        </p>
+
+        <h3>Todo</h3>
+        <ul id="incomplete-tasks">
+          
+        </ul>
+
+        <h3>Completed</h3>
+        <ul id="completed-tasks">
+          <li>
+            <input type="checkbox" checked /><label>See the Doctor</label
+            ><input type="text" /><button class="edit">Edit</button
+            ><button class="delete">Delete</button>
+          </li>
+        </ul>
+      </div>
     </main>
   </body>
 </html>

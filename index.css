@@ -20,14 +20,15 @@
   flex-wrap: nowrap;
   justify-content: center;
   align-items: center;
-  background-image: url(/images/expenseLogin.jpg);
-  background-repeat: no-repeat;
-  background-position: center;
-
-  background-size: cover;
 }
 .image {
   width: 100%;
+}
+.BackGroundImage {
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-image: url("/images/expenseLogin.jpg");
 }
 .hedding {
   text-align: center;
