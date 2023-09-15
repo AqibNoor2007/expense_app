@@ -22,8 +22,12 @@
         <h2>TODO LIST</h2>
         <h3>Add Item</h3>
         <p>
+          <div class="inputBtn">
           <input id="new-task" type="text" oninput="CheckValue()" />
-          <button onclick="AddTodo()" id="addTodo">Add</button>
+          
+
+            <button onclick="AddTodo()" id="addTodo" >Add</button>
+          </div>
           <p id="error" class="hidden">Please Enter a Value</p>
         </p>
 
@@ -32,15 +36,7 @@
           
         </ul>
 
-        <h3>Completed</h3>
-        <ul id="completed-tasks">
-          <li>
-            <input type="checkbox" checked /><label>See the Doctor</label
-            ><input type="text" /><button class="edit">Edit</button
-            ><button class="delete">Delete</button>
-          </li>
-        </ul>
-      </div>
+       
     </main>
   </body>
 </html>

@@ -65,8 +65,12 @@ button#logout {
   letter-spacing: 1px;
   color: #fff;
   border: none;
-  padding: 10px 20px;
+  /* padding: 10px 20px; */
   font-size: 16px;
+  margin-right: 14px;
+  /* padding: 12px; */
+  padding: 10px 0;
+  border-radius: 14px;
   cursor: pointer;
 }
 .logoutBtn {
@@ -89,11 +93,12 @@ body {
 
 .container {
   display: block;
-  width: 400px;
-  margin: 10px auto 100px;
+  margin: 10px auto;
   background-color: #fff;
   padding: 0px 10px 10px 10px;
   border-radius: 10px;
+  max-width: 600px;
+  width: 100%;
 }
 
 h2 {
@@ -105,6 +110,8 @@ h2 {
 ul {
   margin: 0;
   padding: 0;
+  height: 259px;
+  overflow: auto;
 }
 
 li * {
@@ -131,6 +138,7 @@ button {
   margin: 10px 0 0;
   font-family: Lato, sans-serif;
   cursor: pointer;
+  float: right;
 }
 
 button:hover {
@@ -176,7 +184,10 @@ label[for="new-task"] {
 
 input#new-task {
   float: left;
-  width: 318px;
+  width: 78%;
+}
+.inputBtn {
+  display: flex;
 }
 
 p > button:hover {
